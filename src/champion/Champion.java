@@ -4,7 +4,9 @@ public class Champion {
 
 	String name;
 	private double hp;
+	double maxHp;
 	double mana;
+	double maxMana;
 	double speed;
 	double ad; // basic damage
 	double ap; // ability damage
@@ -17,7 +19,16 @@ public class Champion {
 	private double exp; // experience
 	private int level;
 	int init = 80 ; //initial level 1 required exp
+	double md = 1.1 ; // exp required modifier
 	Boolean isdead = false;
+	
+	//********** level up stat growth 
+	double hp_g;
+	double mana_g;
+	double ad_g;
+	double ap_g;
+	double armor_g;
+	double mr_g;
 	
 	public Champion(){
 		
@@ -66,12 +77,12 @@ public class Champion {
 	}
 	
 	public void islevelup(int level, double exp){
-		double md = 1.1; //exp modifier
+		//double md = 1.1; //exp modifier
 		//int init = 500 ; //initial exp
 		if(exp >= 132995) return;
 		switch(level){
-		    case 1:  if(exp >= init)  {setLevel(2); init += init*md; System.out.println("You're now lv2");};  //500
-		    case 2:  if(exp >= init)  {setLevel(3); init += init*md; System.out.println("You're now lv3");};
+		    case 1:  if(exp >= init)  {levelUp(level);};  //500
+		    case 2:  if(exp >= init)  {levelUp(level);};
 		    case 3:  if(exp >= init)  {setLevel(4); init += init*md; System.out.println("You're now lv4");};
 		    case 4:  if(exp >= init)  {setLevel(5); init += init*md; System.out.println("You're now lv5");};
 		    case 5:  if(exp >= init)  {setLevel(6); init += init*md; System.out.println("You're now lv6");};
@@ -82,6 +93,22 @@ public class Champion {
 		    case 10: return;
 		}
 	}
+	public void levelUp(int o){  // o = original level
+		
+		setLevel(o+1);
+		init += init*md; 
+		System.out.println(" congrats!! You're now lv" + (o+1) + "+++++++++");
+		this.ad += ad_g;
+		this.ap += ap_g;
+		this.hp += hp_g;
+		this.mana += mana_g;      // current hp & mana slightly added when level up
+		this.maxHp += hp_g;
+		this.maxMana += mana_g;            
+		this.armor += armor_g;
+		this.mr += mr_g;
+		
+	}
+	
 
 	public double getHp() {
 		return hp;
