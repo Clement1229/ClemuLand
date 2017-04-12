@@ -35,12 +35,12 @@ public class SwordMan extends Champion {
 	public void initialize(String name){
 		//500, 200, 60, 0, 35, 25, 0
 		this.name = name;
-		this.setHp(500);
-		this.mana = 200;
-		this.ad = 60;
+		this.setHp(Math.ceil(616.28));
+		this.mana = 0;
+		this.ad = Math.ceil(57.88);
 		this.ap = 0;
-		this.setArmor(35);
-		this.mr = 15;
+		this.setArmor(Math.ceil(27.536));
+		this.mr = Math.ceil(32.1);
 		this.flee = 0;
 		this.crit = 0;
 		this.armorPen = 0;
