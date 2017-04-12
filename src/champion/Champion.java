@@ -83,13 +83,13 @@ public class Champion {
 		switch(level){
 		    case 1:  if(exp >= init)  {levelUp(level);};  //500
 		    case 2:  if(exp >= init)  {levelUp(level);};
-		    case 3:  if(exp >= init)  {setLevel(4); init += init*md; System.out.println("You're now lv4");};
-		    case 4:  if(exp >= init)  {setLevel(5); init += init*md; System.out.println("You're now lv5");};
-		    case 5:  if(exp >= init)  {setLevel(6); init += init*md; System.out.println("You're now lv6");};
-		    case 6:  if(exp >= init)  {setLevel(7); init += init*md; System.out.println("You're now lv7");};
-		    case 7:  if(exp >= init)  {setLevel(8); init += init*md; System.out.println("You're now lv8");};
-		    case 8:  if(exp >= init)  {setLevel(9); init += init*md; System.out.println("You're now lv9");};
-		    case 9:  if(exp >= init)  {setLevel(10); init += init*md;System.out.println("You're now lv10");};
+		    case 3:  if(exp >= init)  {levelUp(level);};
+		    case 4:  if(exp >= init)  {levelUp(level);};
+		    case 5:  if(exp >= init)  {levelUp(level);};
+		    case 6:  if(exp >= init)  {levelUp(level);};
+		    case 7:  if(exp >= init)  {levelUp(level);};
+		    case 8:  if(exp >= init)  {levelUp(level);};
+		    case 9:  if(exp >= init)  {levelUp(level);};
 		    case 10: return;
 		}
 	}
