@@ -30,20 +30,11 @@ public class Champion {
 	double armor_g;
 	double mr_g;
 	
-//	Champion c;
 	
 	public Champion(){
 		
 	}
-	/*public Champion(int n, String champ_name){
-		if (n == 1){
-			this.c = new SwordMan(champ_name);
-			System.out.println("You have selected SwordMan!");
-		}
-		if ( n == 2){
-			Champion c = new Thief(champ_name);
-		}
-	}*/
+	
 	public void initialize(){
 		
 	}
@@ -96,18 +87,7 @@ public class Champion {
 		if(exp >= init){
 			levelUp(level);
 		}
-		/*switch(level){
-		    case 1:  if(exp >= init)  {levelUp(level);};  //500
-		    case 2:  if(exp >= init)  {levelUp(level);};
-		    case 3:  if(exp >= init)  {levelUp(level);};
-		    case 4:  if(exp >= init)  {levelUp(level);};
-		    case 5:  if(exp >= init)  {levelUp(level);};
-		    case 6:  if(exp >= init)  {levelUp(level);};
-		    case 7:  if(exp >= init)  {levelUp(level);};
-		    case 8:  if(exp >= init)  {levelUp(level);};
-		    case 9:  if(exp >= init)  {levelUp(level);};
-		    case 10: return;
-		}*/
+	
 	}
 	public void levelUp(int o){  // o = original level
 		
