@@ -30,9 +30,20 @@ public class Champion {
 	double armor_g;
 	double mr_g;
 	
+//	Champion c;
+	
 	public Champion(){
 		
 	}
+	/*public Champion(int n, String champ_name){
+		if (n == 1){
+			this.c = new SwordMan(champ_name);
+			System.out.println("You have selected SwordMan!");
+		}
+		if ( n == 2){
+			Champion c = new Thief(champ_name);
+		}
+	}*/
 	public void initialize(){
 		
 	}
@@ -55,10 +66,12 @@ public class Champion {
 		if(this.speed >= m.getSpeed()){
 			m.setHp(m.getHp() - (this.ad - m.getArmor()));
 			System.out.println("You dealt " + (this.ad - m.getArmor() + " damage."));
+			System.out.println("debug: this.ad =" + this.ad +"m.getArmor" + m.getArmor());
+			
 			m.attack(this);
 		}else{
-			m.attack(this);
-			m.setHp(m.getHp() - (this.ad - m.getArmor()));
+			m.attack(this);  // monster attack champ
+			m.setHp(m.getHp() - (this.ad - m.getArmor()));  // Champ attacks monster
 			System.out.println("You dealt " + (this.ad - m.getArmor() + " damage."));
 		}
 		
