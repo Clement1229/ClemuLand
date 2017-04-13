@@ -15,6 +15,8 @@ public class PolyIsland extends Stage {
 		int slime;
 		int poly;
 		int BuggyFly;
+		int x;
+		int y;
 	
 	public PolyIsland(Champion c){
 		super(c);

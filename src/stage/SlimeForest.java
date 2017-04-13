@@ -11,6 +11,8 @@ public class SlimeForest extends Stage{
 	int slime;
 	int poly;
 	int BuggyFly;
+	int x;
+	int y;
 	
 	public SlimeForest(Champion c){
 		super(c);

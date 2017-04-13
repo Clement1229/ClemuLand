@@ -11,6 +11,8 @@ public class Stage {
 	Champion c;
 	Random ram = new Random();
 	Scanner scan = new Scanner(System.in);
+	int x;
+	int y;
 	
 	public Stage(){
 		
