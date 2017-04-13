@@ -40,7 +40,7 @@ public class Champion {
 	}
 	
 	public void getStatus(){
-		System.out.println("***********************");
+		System.out.println("*********" + name +"**************");
 		System.out.println("hp: " + hp +"    " + "mana: " + mana);
 		System.out.println("ad: " + ad + "     " + "ap: " + ap );
 		System.out.println("armor: " + armor + "  " + "mr: " + mr);
@@ -48,7 +48,7 @@ public class Champion {
 		System.out.println("adPen: " + armorPen + "   " + "apPen: " + magicPen);
 		System.out.println("exp: " + exp + "    " + "level: "  + level);
 		System.out.println("speed: " + speed);
-		System.out.println("***********************");		
+		System.out.println("**********************************");		
 		
 	}
 	
@@ -57,27 +57,36 @@ public class Champion {
 		if(this.speed >= m.getSpeed()){
 			m.setHp(m.getHp() - (this.ad - m.getArmor()));
 			System.out.println("You dealt " + (this.ad - m.getArmor() + " damage."));
-			System.out.println("debug: this.ad =" + this.ad +"m.getArmor" + m.getArmor());
-			
+			//System.out.println("debug: this.ad =" + this.ad +"m.getArmor" + m.getArmor());
+			if(m.getHp() <= 0){ // if you killed monsters
+				m_isDead(m);
+			}
 			m.attack(this);
+			if(this.hp <= 0){ // check if you are dead
+				c_isDead();
+			}
 		}else{
-			m.attack(this);  // monster attack champ
+			m.attack(this);  // monster attacks champ
+			if(this.hp <= 0){ // check if you are dead
+				c_isDead();
+			}
 			m.setHp(m.getHp() - (this.ad - m.getArmor()));  // Champ attacks monster
 			System.out.println("You dealt " + (this.ad - m.getArmor() + " damage."));
+			if(m.getHp() <= 0){ // if you killed monsters
+				m_isDead(m);
+			}
 		}
-		
-		
-		if(m.getHp() <= 0){
-			System.out.println("You've killed " + m.getName() + ".");
-			this.setExp(this.getExp() + m.getExp());
-			System.out.println("gained " + m.getExp() + " exp.");
-			islevelup(getLevel(), getExp());
-			this.getStatus();
-		}
-		if(this.hp <= 0){
-			System.out.println("You're dead.");
-			isdead = true;
-		}
+	}
+	public void m_isDead(Monsters m){
+		System.out.println("You've killed " + m.getName() + ".");
+		this.setExp(this.getExp() + m.getExp());
+		System.out.println("gained " + m.getExp() + " exp.");
+		islevelup(getLevel(), getExp());
+		this.getStatus();
+	}
+	public void c_isDead(){
+		System.out.println("You're dead.");
+		isdead = true;
 	}
 	
 	public void islevelup(int level, double exp){
