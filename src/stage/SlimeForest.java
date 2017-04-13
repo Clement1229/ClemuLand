@@ -35,7 +35,7 @@ public class SlimeForest extends Stage{
     
     public void adventure_mosnters(Champion c){
     	int value = ram.nextInt(101);
-        if (value < 80){ // slime
+        if (value < 90){ // slime
         	Monsters slime = new Slime();
         	System.out.println("log: random number: " + value);
         	System.out.println("You encounter with a Slime");
@@ -62,15 +62,15 @@ public class SlimeForest extends Stage{
         }
         if(c.getHp() <= 0){ // champion died
         	System.out.println("Game over");
-        }else{         // continue playing
+        }else{              // continue playing
         	initialize();
         }
     }
     
-    public void adventure_items(){
-    	System.out.println("You found an item!!! which is nothing......");
-    	initialize();
-    }
+  //  public void adventure_items(){
+  //  	System.out.println("You found an item!!! which is nothing......");
+  //  	initialize();
+  //  }
     
    
     

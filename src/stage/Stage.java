@@ -70,4 +70,9 @@ public class Stage {
 		
 	}
 	
+	public void adventure_items(){
+    	System.out.println("You found an item!!! which is nothing......");
+    	initialize();
+    }
+	
 }
