@@ -79,8 +79,11 @@ public class Champion {
 	public void islevelup(int level, double exp){
 		//double md = 1.1; //exp modifier
 		//int init = 500 ; //initial exp
-		if(exp >= 132995) return;
-		switch(level){
+		if(exp >= 132995) return; // reach highest lv
+		if(exp >= init){
+			levelUp(level);
+		}
+		/*switch(level){
 		    case 1:  if(exp >= init)  {levelUp(level);};  //500
 		    case 2:  if(exp >= init)  {levelUp(level);};
 		    case 3:  if(exp >= init)  {levelUp(level);};
@@ -91,7 +94,7 @@ public class Champion {
 		    case 8:  if(exp >= init)  {levelUp(level);};
 		    case 9:  if(exp >= init)  {levelUp(level);};
 		    case 10: return;
-		}
+		}*/
 	}
 	public void levelUp(int o){  // o = original level
 		
