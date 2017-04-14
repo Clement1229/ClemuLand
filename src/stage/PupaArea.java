@@ -28,7 +28,7 @@ public class PupaArea extends Stage{
 	}
 //****************************adventure*******************************
     public void adventure(Champion c){ // mons 86%  item 14%
-        int monsOrItems = ram.nextInt(101);
+        int monsOrItems = ran.nextInt(101);
         if(monsOrItems < 86){
         	adventure_mosnters(c); 
         }else
@@ -38,45 +38,28 @@ public class PupaArea extends Stage{
     
     
     public void adventure_mosnters(Champion c){
-    	int value = ram.nextInt(101);
+    	int value = ran.nextInt(101);
         if (value <= 5){ // slime
         	Monsters slime = new Slime();
-        	//System.out.println("log: random number: " + value);
-        	System.out.println("You encounter with a Slime");
-        	log.inBattleMessage();
-        	//System.out.println("1. attack 2. item 3.escape");
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, slime);
         }
         if  (value >= 6 && value <= 11){ // poly
-        	//System.out.println("random number: " + value);
-        	System.out.println("You encounter with a Poly");
-        	log.inBattleMessage();
         	Monsters poly = new Poly();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, poly);
         }
         if  (value >= 12 && value <= 62){ // pupa
-        	//System.out.println("random number: " + value);
-        	System.out.println("You encounter with a Pupa");
-        	log.inBattleMessage();
         	Monsters pupa= new Pupa();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, pupa);
         }
         if  (value >= 63 && value <= 93){ // fabre
-        	//System.out.println("random number: " + value);
-        	System.out.println("You encounter with a Fabre");
-        	log.inBattleMessage();
         	Monsters fabre = new Fabre();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, fabre);
         }
         if (value >= 94 && value <= 100){ //BuggyFly
-        	//System.out.println("random number: " + value);
-        	System.out.println("You encounter with....");
-        	System.out.println( " a BuggyFly !!!!");
-        	log.inBattleMessage();
         	Monsters bug = new BuggyFly();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, bug);

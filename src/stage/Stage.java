@@ -10,7 +10,7 @@ import logger.Logger;
 public class Stage {
     
 	Champion c;
-	Random ram = new Random();
+	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
 	int x;
 	int y;
@@ -58,7 +58,7 @@ public class Stage {
 			return;
 		}
 		System.out.println();
-		System.out.println("1. attack 2. item 3.escape");
+		log.inBattleMessage(); //System.out.println("1. attack 2. item 3.escape");
 		int input = scan.nextInt();
 		battleCondition(input,c,m);
 	}

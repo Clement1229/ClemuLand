@@ -17,4 +17,6 @@ public class Slime extends Monsters {
 		this.armorPen = 0;
 		this.magicPen = 0;
 		this.setExp(28);
+		log.meetMonsters(this);
+    	log.inBattleMessage();
 	}}

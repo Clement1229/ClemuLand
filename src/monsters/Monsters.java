@@ -1,6 +1,7 @@
 package monsters;
 
 import champion.Champion;
+import logger.Logger;
 
 public class Monsters {
 	private String name;
@@ -17,6 +18,7 @@ public class Monsters {
 	double magicPen;
 	private double exp;
 	boolean isdead = false;
+	Logger log = new Logger();
 	
 	//attack formula
 	private double ad_m = 1.1; // attack modifier default 1.1

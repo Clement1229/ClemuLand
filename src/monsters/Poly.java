@@ -15,5 +15,7 @@ public class Poly extends Monsters{
 		this.armorPen = 0;
 		this.magicPen = 0;
 		this.setExp(40);
+		log.meetMonsters(this);
+    	log.inBattleMessage();
 	}
 }

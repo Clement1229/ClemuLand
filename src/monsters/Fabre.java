@@ -15,5 +15,7 @@ public class Fabre extends Monsters{
 		this.armorPen = 0;
 		this.magicPen = 0;
 		this.setExp(48);
+		log.meetMonsters(this);
+    	log.inBattleMessage();
 	}
 }
