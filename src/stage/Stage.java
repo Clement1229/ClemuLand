@@ -22,14 +22,11 @@ public class Stage {
 	
 	public Stage(Champion c){
 		this.c = c;
-		//System.out.println( "stage constructor");
 		initialize();
     		 
     }
 	public void initialize(){
-		System.out.println("Select a move:");
-    	System.out.println("1. adventure" + "       " + "2. Item");
-    	System.out.println("3. Status" + "          " + "4. exit");
+		log.actionInMap();
     	int move = scan.nextInt();
     	switch(move){
     	case 1: 
