@@ -45,14 +45,13 @@ public class Champion {
 	}
 	
 	public void getStatus(){
-		System.out.println("*********" + name +"**************");
+		System.out.println("*********" + name +"***** LV: " + level +" *********");
 		System.out.println("hp: " + Math.ceil(hp) +"    " + "mana: " + Math.ceil(mana));
 		System.out.println("ad: " + Math.ceil(ad) + "     " + "ap: " + Math.ceil(ap) );
 		System.out.println("armor: " + Math.ceil(armor) + "  " + "mr: " + Math.ceil(mr));
 		System.out.println("flee: " + Math.ceil(flee) + "    " + "crit: " + Math.ceil(crit) );
 		System.out.println("adPen: " + Math.ceil(armorPen) + "   " + "apPen: " + Math.ceil(magicPen));
-		System.out.println("exp: " + Math.ceil(exp) + "    " + "level: "  + level);
-		System.out.println("speed: " + Math.ceil(speed));
+		System.out.println("exp: " + Math.ceil(exp) + "    " + "speed: "  + speed);
 		System.out.println("**********************************");		
 		
 	}
@@ -61,7 +60,7 @@ public class Champion {
 	public void attack(Monsters m){
 		if(this.speed >= m.getSpeed()){
 			m.setHp(m.getHp() - damageCalculator(m));
-			System.out.println("You dealt " + damageCalculator(m) + " damage.");
+			System.out.println("You dealt " + Math.ceil(damageCalculator(m)) + " damage.");
 			if(m.getHp() <= 0){ // if you killed monsters
 				m_isDead(m);
 				return; // end this action so monster won't attack back
@@ -75,8 +74,8 @@ public class Champion {
 			if(this.hp <= 0){ // check if you are dead
 				c_isDead();
 			}
-			m.setHp(m.getHp() - (this.ad - m.getArmor()));  // Champ attacks monster
-			System.out.println("You dealt " + (this.ad - m.getArmor() + " damage."));
+			m.setHp(m.getHp() - (damageCalculator(m)));  // Champ attacks monster
+			System.out.println("You dealt " + Math.ceil(damageCalculator(m)) + " damage.");
 			if(m.getHp() <= 0){ // if you killed monsters
 				m_isDead(m);
 			}

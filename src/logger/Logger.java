@@ -26,8 +26,8 @@ public class Logger {
 	
 	public void actionInMap(){
 		System.out.println("Select a move:");
-    	System.out.println("1. adventure" + "       " + "2. Item");
-    	System.out.println("3. Status" + "          " + "4. exit");
+    	System.out.println("1. adventure" + "       " + "2. Item"  +"            3. Status");
+    	System.out.println("4. checkMap" +  "       5.Save & Exit");
 	}
 	
 	public void meetMonsters0(Monsters m){
