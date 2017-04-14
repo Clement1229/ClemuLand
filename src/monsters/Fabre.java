@@ -6,7 +6,7 @@ public class Fabre extends Monsters{
 		this.setName("Fabre");	
 		this.setHp(63);
 		this.mana = 0;
-		this.ad = 0;
+		this.ad = 50;
 		this.ap = 0;
 		this.setArmor(38);
 		this.mr = 25;

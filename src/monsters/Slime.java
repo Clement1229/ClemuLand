@@ -22,7 +22,7 @@ public class Slime extends Monsters {
 		setName(name);
 		this.setHp(65);
 		this.mana = 0;
-		this.ad = 60;
+		this.ad = 30;
 		this.ap = 0;
 		this.setArmor(0);
 		this.mr = 0;
