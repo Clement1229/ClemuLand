@@ -22,7 +22,7 @@ public class Poly extends Monsters{
 		this.mana = 0;
 		this.ad = 40;
 		this.ap = 0;
-		this.setArmor(0);
+		this.setArmor(20);
 		this.mr = 0;
 		this.flee = 0;
 		this.crit = 0;
