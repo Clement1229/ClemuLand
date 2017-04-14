@@ -46,13 +46,13 @@ public class Champion {
 	
 	public void getStatus(){
 		System.out.println("*********" + name +"**************");
-		System.out.println("hp: " + hp +"    " + "mana: " + mana);
-		System.out.println("ad: " + ad + "     " + "ap: " + ap );
-		System.out.println("armor: " + armor + "  " + "mr: " + mr);
-		System.out.println("flee: " + flee + "    " + "crit: " + crit );
-		System.out.println("adPen: " + armorPen + "   " + "apPen: " + magicPen);
-		System.out.println("exp: " + exp + "    " + "level: "  + level);
-		System.out.println("speed: " + speed);
+		System.out.println("hp: " + Math.ceil(hp) +"    " + "mana: " + Math.ceil(mana));
+		System.out.println("ad: " + Math.ceil(ad) + "     " + "ap: " + Math.ceil(ap) );
+		System.out.println("armor: " + Math.ceil(armor) + "  " + "mr: " + Math.ceil(mr));
+		System.out.println("flee: " + Math.ceil(flee) + "    " + "crit: " + Math.ceil(crit) );
+		System.out.println("adPen: " + Math.ceil(armorPen) + "   " + "apPen: " + Math.ceil(magicPen));
+		System.out.println("exp: " + Math.ceil(exp) + "    " + "level: "  + level);
+		System.out.println("speed: " + Math.ceil(speed));
 		System.out.println("**********************************");		
 		
 	}
