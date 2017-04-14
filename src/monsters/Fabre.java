@@ -1,19 +1,19 @@
 package monsters;
 
-public class Pupa extends Monsters{
-	public Pupa(){
-	
-		this.setName("Pupa");
-		this.setHp(247);
+public class Fabre extends Monsters{
+	public Fabre(){
+		
+		this.setName("Fabre");	
+		this.setHp(63);
 		this.mana = 0;
 		this.ad = 0;
 		this.ap = 0;
 		this.setArmor(38);
 		this.mr = 25;
-		this.flee = 0;
+		this.flee = 5;
 		this.crit = 0;
 		this.armorPen = 0;
 		this.magicPen = 0;
-		this.setExp(40);
+		this.setExp(48);
 	}
 }
