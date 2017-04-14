@@ -14,6 +14,6 @@ public class Pupa extends Monsters{
 		this.crit = 0;
 		this.armorPen = 0;
 		this.magicPen = 0;
-		this.setExp(40);
+		this.setExp(70);
 	}
 }

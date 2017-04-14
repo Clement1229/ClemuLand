@@ -18,6 +18,12 @@ public class Monsters {
 	private double exp;
 	boolean isdead = false;
 	
+	//attack formula
+	private double ad_m = 1.1; // attack modifier default 1.1
+	double threshold_h = 0.8; // default 0.8
+	double threshold_l = 0.5;
+	
+	
 	public Monsters(){
 		
 	}
@@ -29,6 +35,26 @@ public class Monsters {
 		System.out.println(this.name + " has dealt: " + ((this.ad - c.getArmor())) +" to you." );
 		
 	}
+	public double damageCalculator(Champion c){  // calculate and return damage
+		double damage = 0;
+		if(this.ad < c.getArmor()){
+			damage= 1;
+		}
+		
+		if (((this.ad - c.getArmor())/this.ad) >= threshold_h){   // (attack - armor) / attack > 80%
+			damage = (this.ad * this.ad_m - c.getArmor()); 
+		}
+		if (((this.ad - c.getArmor())/this.ad) > threshold_l     // >=50% ~ <80%
+		    && ((this.ad - c.getArmor())/this.ad) <= threshold_h){
+			damage = (this.ad - c.getArmor());
+		}
+		if (((this.ad - c.getArmor())/this.ad) <= threshold_l){  // < 50%{
+			damage = (this.ad - c.getArmor()* c.getAd_m());
+		}
+		return damage;
+	}
+	
+	
 	public double getHp() {
 		return hp;
 	}
@@ -58,5 +84,11 @@ public class Monsters {
 	}
 	public void setSpeed(double speed) {
 		this.speed = speed;
+	}
+	public double getAd_m() {
+		return ad_m;
+	}
+	public void setAd_m(double ad_m) {
+		this.ad_m = ad_m;
 	}
 }

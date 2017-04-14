@@ -21,6 +21,11 @@ public class Champion {
 	int init = 80 ; //initial level 1 required exp
 	double md = 1.1 ; // exp required modifier
 	Boolean isdead = false;
+
+	//attack formula
+	private double ad_m = 1.1; // ad_modifier -> when (attack - armor / attack) > 80%
+	double threshold_h = 0.8; // default 0.8
+	double threshold_l = 0.5;	
 	
 	//********** level up stat growth 
 	double hp_g;
@@ -55,8 +60,9 @@ public class Champion {
 	
 	public void attack(Monsters m){
 		if(this.speed >= m.getSpeed()){
-			m.setHp(m.getHp() - (this.ad - m.getArmor()));
-			System.out.println("You dealt " + (this.ad - m.getArmor() + " damage."));
+			m.setHp(m.getHp() - damageCalculator(m));
+			//m.setHp(m.getHp() - (this.ad - m.getArmor()));
+			System.out.println("You dealt " + damageCalculator(m) + " damage.");
 			//System.out.println("debug: this.ad =" + this.ad +"m.getArmor" + m.getArmor());
 			if(m.getHp() <= 0){ // if you killed monsters
 				m_isDead(m);
@@ -76,6 +82,25 @@ public class Champion {
 				m_isDead(m);
 			}
 		}
+	}
+	// higher ratio ad/armor -> the higher damage...  vice versa
+	public double damageCalculator(Monsters m){  // calculate and return damage
+		double damage = 0;
+		if(this.ad < m.getArmor()){
+			damage= 1;
+		}
+		
+		if (((this.ad - m.getArmor())/this.ad) >= threshold_h){   // (attack - armor) / attack > 80%
+			damage = (this.ad * this.getAd_m() - m.getArmor()); 
+		}
+		if (((this.ad - m.getArmor())/this.ad) > threshold_l     // >=50% ~ <80%
+		    && ((this.ad - m.getArmor())/this.ad) <= threshold_h){
+			damage = (this.ad - m.getArmor());
+		}
+		if (((this.ad - m.getArmor())/this.ad) <= threshold_l){  // < 50%{
+			damage = (this.ad - m.getArmor()* m.getAd_m());
+		}
+		return damage;
 	}
 	public void m_isDead(Monsters m){
 		System.out.println("You've killed " + m.getName() + ".");
@@ -141,5 +166,13 @@ public class Champion {
 	}
 	public void setLevel(int level) {
 		this.level = level;
+	}
+
+	public double getAd_m() {
+		return ad_m;
+	}
+
+	public void setAd_m(double ad_m) {
+		this.ad_m = ad_m;
 	}
 }
