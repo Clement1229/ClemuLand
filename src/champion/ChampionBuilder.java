@@ -9,13 +9,23 @@ public class ChampionBuilder {
 	Champion c;
 	Stage stage;
 	
-	public ChampionBuilder(int n, String champ_name){
-		if (n == 1){
+	public ChampionBuilder(){
+		System.out.println("Create your Champion");
+        System.out.println("1. SwordMan     2.Thief    3.Paladin");
+        int champ_select = scan.nextInt();
+        System.out.println("Enter your name: ");
+        String champ_name = scan.next();
+		if (champ_select == 1){
 			c = new SwordMan(champ_name);
 			System.out.println("You have selected SwordMan!");
 		}
-		if ( n == 2){
+		if ( champ_select == 2){
 		    c = new Thief(champ_name);
+		    System.out.println("You have selected Thief!");
+		}
+		if ( champ_select == 3){
+		    c = new Paladin(champ_name);
+		    System.out.println("You have selected Paladin!");
 		}
 		chooseStage();
 	}
