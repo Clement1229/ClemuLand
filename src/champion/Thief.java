@@ -8,14 +8,14 @@ public class Thief extends Champion{
 	public void initialize(String name){
 		
 		this.name = name;
-		this.maxHp = Math.ceil(550);
-		this.setHp(Math.ceil(550));
+		this.maxHp = 550;
+		this.setHp(550);
 		this.mana = 300;
 		this.maxMana = 3000;
-		this.ad = Math.ceil(60);
+		this.ad = 60;
 		this.ap = 0;
-		this.setArmor(Math.ceil(22));
-		this.mr = Math.ceil(32.1);
+		this.setArmor(22);
+		this.mr = 32.1;
 		this.flee = 0;
 		this.crit = 0;
 		this.armorPen = 0;

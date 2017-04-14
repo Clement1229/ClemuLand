@@ -1,22 +1,20 @@
 package champion;
 
-public class SwordMan extends Champion {
-
-	
-	public SwordMan(String name){
+public class Paladin extends Champion{
+public Paladin(String name){
 		
 		initialize(name);
 	}
 	public void initialize(String name){
 		
 		this.name = name;
-		this.maxHp = 616.28;
-		this.setHp(616.28);
-		this.mana = 0;
-		this.maxMana = 0;
-		this.ad =57.88;
+		this.maxHp = 564.48;
+		this.setHp(564.48);
+		this.mana = 310.44;
+		this.maxMana = 310.44;
+		this.ad = 55.88;
 		this.ap = 0;
-		this.setArmor(27.536);
+		this.setArmor(31.384);
 		this.mr = 32.1;
 		this.flee = 0;
 		this.crit = 0;
@@ -26,11 +24,11 @@ public class SwordMan extends Champion {
 		this.setLevel(1);		
 		
 		//*********stat growth
-		 this.hp_g = 84.25;
-		 this.mana_g = 0;
-		 this.ad_g = 4.5;
+		 this.hp_g = 86;
+		 this.mana_g = 33;
+		 this.ad_g = 3.5;
 		 this.ap_g = 0;
-		 this.armor_g = 3;
+		 this.armor_g = 4.3;
 		 this.mr_g = 1.25;
 	}
 }
