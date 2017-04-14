@@ -61,11 +61,10 @@ public class Champion {
 	public void attack(Monsters m){
 		if(this.speed >= m.getSpeed()){
 			m.setHp(m.getHp() - damageCalculator(m));
-			//m.setHp(m.getHp() - (this.ad - m.getArmor()));
 			System.out.println("You dealt " + damageCalculator(m) + " damage.");
-			//System.out.println("debug: this.ad =" + this.ad +"m.getArmor" + m.getArmor());
 			if(m.getHp() <= 0){ // if you killed monsters
 				m_isDead(m);
+				return; // end this action so monster won't attack back
 			}
 			m.attack(this);
 			if(this.hp <= 0){ // check if you are dead

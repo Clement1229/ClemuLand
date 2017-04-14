@@ -31,7 +31,7 @@ public class Monsters {
 		setName(name);
 	}
 	public void attack(Champion c){
-		c.setHp(c.getHp() - (this.ad - c.getArmor()));
+		c.setHp(c.getHp() - damageCalculator(c));
 		System.out.println(this.name + " has dealt: " + ((this.ad - c.getArmor())) +" to you." );
 		
 	}
