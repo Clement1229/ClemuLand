@@ -22,7 +22,7 @@ public class ChampionBuilder {
 	
 	public void chooseStage(){
 		System.out.println("Enter a number to select a statge");
-    	System.out.println("1. SlimeForest       2.PolyIsland");
+    	System.out.println("1. SlimeForest       2.PolyIsland       3.PupaArea");
     	int stage_num = scan.nextInt();
     	String stage_name;
     	//Stage stage = new Stage(c);
@@ -36,8 +36,11 @@ public class ChampionBuilder {
 		 		 System.out.println("You've entered "+ stage_name );
 		 		 stage = new PolyIsland(c);
 		 		 break;
-    	case 3: System.out.println("testing");
-    	break;
+    	case 3: stage_name = "PupaArea";
+		 		System.out.println("You've entered "+ stage_name );
+		 		stage = new PupaArea(c);
+		 		break;
+    	
     	}
 	}
 }
