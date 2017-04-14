@@ -39,25 +39,25 @@ public class SlimeForest extends Stage{
     	int value = ram.nextInt(101);
         if (value < 90){ // slime
         	Monsters slime = new Slime();
-        	System.out.println("log: random number: " + value);
+        	//System.out.println("log: random number: " + value);
         	System.out.println("You encounter with a Slime");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, slime);
         }
         if  (value >= 90 && value < 100){ // poly
-        	System.out.println("random number: " + value);
+        	//System.out.println("random number: " + value);
         	System.out.println("You encounter with a Poly");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters poly = new Poly();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, poly);
         }
         if (value == 100){ //BuggyFly
-        	System.out.println("random number: " + value);
+        	//System.out.println("random number: " + value);
         	System.out.println("You encounter with....");
         	System.out.println( " a BuggyFly !!!!");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters bug = new BuggyFly();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, bug);
@@ -69,12 +69,6 @@ public class SlimeForest extends Stage{
         }
     }
     
-  //  public void adventure_items(){
-  //  	System.out.println("You found an item!!! which is nothing......");
-  //  	initialize();
-  //  }
-    
-   
-    
+ 
     
 }

@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import champion.Champion;
 import monsters.Monsters;
+import logger.Logger;
 
 public class Stage {
     
@@ -13,6 +14,7 @@ public class Stage {
 	Scanner scan = new Scanner(System.in);
 	int x;
 	int y;
+	Logger log = new Logger();
 	
 	public Stage(){
 		
@@ -20,7 +22,7 @@ public class Stage {
 	
 	public Stage(Champion c){
 		this.c = c;
-		//System.out.println( "statge constructor");
+		//System.out.println( "stage constructor");
 		initialize();
     		 
     }

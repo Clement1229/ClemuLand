@@ -1,5 +1,7 @@
 package stage;
 
+import logger.Logger;
+
 import champion.Champion;
 import monsters.*;
 
@@ -10,8 +12,7 @@ public class PupaArea extends Stage{
 	int pupa;     // 50%
 	int fabre;    // 30%
 	int BuggyFly; // 8%
-	int x;
-	int y;
+	
 	
 	public PupaArea(Champion c){
 		super(c);
@@ -42,14 +43,15 @@ public class PupaArea extends Stage{
         	Monsters slime = new Slime();
         	//System.out.println("log: random number: " + value);
         	System.out.println("You encounter with a Slime");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
+        	//System.out.println("1. attack 2. item 3.escape");
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, slime);
         }
         if  (value >= 6 && value <= 11){ // poly
         	//System.out.println("random number: " + value);
         	System.out.println("You encounter with a Poly");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters poly = new Poly();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, poly);
@@ -57,7 +59,7 @@ public class PupaArea extends Stage{
         if  (value >= 12 && value <= 62){ // pupa
         	//System.out.println("random number: " + value);
         	System.out.println("You encounter with a Pupa");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters pupa= new Pupa();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, pupa);
@@ -65,7 +67,7 @@ public class PupaArea extends Stage{
         if  (value >= 63 && value <= 93){ // fabre
         	//System.out.println("random number: " + value);
         	System.out.println("You encounter with a Fabre");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters fabre = new Fabre();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, fabre);
@@ -74,7 +76,7 @@ public class PupaArea extends Stage{
         	//System.out.println("random number: " + value);
         	System.out.println("You encounter with....");
         	System.out.println( " a BuggyFly !!!!");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters bug = new BuggyFly();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, bug);

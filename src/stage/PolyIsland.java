@@ -15,8 +15,7 @@ public class PolyIsland extends Stage {
 		int slime;
 		int poly;
 		int BuggyFly;
-		int x;
-		int y;
+		
 	
 	public PolyIsland(Champion c){
 		super(c);
@@ -51,7 +50,7 @@ public class PolyIsland extends Stage {
         if (value < 90){ // ply
         	//System.out.println("log: random number: " + value);
         	System.out.println("You encounter with a Poly");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters poly = new Poly();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, poly);
@@ -59,7 +58,7 @@ public class PolyIsland extends Stage {
         if  (value >= 90 && value < 100){ // slime
         	//System.out.println("random number: " + value);
         	System.out.println("You encounter with a Slime");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters slime = new Slime();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, slime);
@@ -68,7 +67,7 @@ public class PolyIsland extends Stage {
         	//System.out.println("random number: " + value);
         	System.out.println("You encounter with....");
         	System.out.println( " a BuggyFly !!!!");
-        	System.out.println("1. attack 2. item 3.escape");
+        	log.inBattleMessage();
         	Monsters bug = new BuggyFly();
         	int battle_n= scan.nextInt();
         	battleCondition(battle_n, c, bug);
