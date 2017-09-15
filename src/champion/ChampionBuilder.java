@@ -10,23 +10,32 @@ public class ChampionBuilder {
 	Stage stage;
 	
 	public ChampionBuilder(){
+		buildChamp();
+      
+		
+	}
+	public void buildChamp(){
 		System.out.println("Create your Champion");
         System.out.println("1. SwordMan     2.Thief    3.Paladin");
         int champ_select = scan.nextInt();
-        System.out.println("Enter your name: ");
-        String champ_name = scan.next();
-		if (champ_select == 1){
-			c = new SwordMan(champ_name);
-			System.out.println("You have selected SwordMan!");
+    	System.out.println("Enter your name: ");
+	    String champ_name = scan.next();
+        
+		switch(champ_select){
+    	case 1:  c = new SwordMan(champ_name); new SlimeForest(c);
+    			 System.out.println("You have selected SwordMan!");
+    			 break;
+    	case 2:  c = new Thief(champ_name);
+	    		 System.out.println("You have selected Thief!");
+	    		 break;
+    	case 3:  c = new Paladin(champ_name);
+	    	     System.out.println("You have selected Paladin!");
+	    	     break;
+    	default: System.out.println("Invalid number.... please try again.");
+    			 buildChamp();
+    			 break;
 		}
-		if ( champ_select == 2){
-		    c = new Thief(champ_name);
-		    System.out.println("You have selected Thief!");
-		}
-		if ( champ_select == 3){
-		    c = new Paladin(champ_name);
-		    System.out.println("You have selected Paladin!");
-		}
+	
 		chooseStage();
 	}
 	
