@@ -31,7 +31,7 @@ public class ChampionBuilder {
 	}
 	
 	public void chooseStage(){
-		System.out.println("Enter a number to select a statge");
+		System.out.println("Enter a number to select a stage");
     	System.out.println("1. SlimeForest       2.PolyIsland       3.PupaArea");
     	int stage_num = scan.nextInt();
     	String stage_name;
