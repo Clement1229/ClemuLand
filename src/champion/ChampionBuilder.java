@@ -47,18 +47,21 @@ public class ChampionBuilder {
     	//Stage stage = new Stage(c);
     	
     	switch(stage_num){
-    	case 1:  stage_name = "SlimeForest";
-    			 System.out.println("You've entered "+ stage_name );
-    			 stage = new SlimeForest(c);
-    			 break;
-    	case 2:  stage_name = "PolyIsland";
-		 		 System.out.println("You've entered "+ stage_name );
-		 		 stage = new PolyIsland(c);
-		 		 break;
-    	case 3: stage_name = "PupaArea";
-		 		System.out.println("You've entered "+ stage_name );
-		 		stage = new PupaArea(c);
-		 		break;
+    	case 1:   stage_name = "SlimeForest";
+    			  System.out.println("You've entered "+ stage_name );
+    			  stage = new SlimeForest(c);
+    			  break;
+    	case 2:   stage_name = "PolyIsland";
+		 		  System.out.println("You've entered "+ stage_name );
+		 		  stage = new PolyIsland(c);
+		 		  break;
+    	case 3:   stage_name = "PupaArea";
+		 		  System.out.println("You've entered "+ stage_name );
+		 		  stage = new PupaArea(c);
+		 		  break;
+		default:  System.out.println("This stage does not exist, please try again.");
+			 	  chooseStage();
+			 	  break;
     	
     	}
 	}
